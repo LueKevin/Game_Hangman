@@ -21,4 +21,11 @@ def hangman():
     print('Welcome to Hangman')
     while wrongGuesses < len(stages) - 1:
         #Game Logic
+        print('\n')
+        guess = input("Guess a letter")
+        if guess in remaining_letters:
+            character_index = remaining_letters.index(guess)
+            letter_board[character_index] = guess
+            remaining_letters[character_index] = '$'
+            
 hangman()
